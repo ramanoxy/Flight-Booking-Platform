@@ -54,8 +54,8 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/flights', [FlightSearchController::class, 'index']);
-    Route::post('/booking/{flight}', [BookingController::class, 'store']);
+    Route::post('/bookings/{flight}', [BookingController::class, 'store']);
 
-    Route::get('/my-bookings', [BookingController::class,'index'])->name('bookings.index');
+    Route::get('/my-bookings', [BookingController::class,'index'])->name('bookings');
 
 });
