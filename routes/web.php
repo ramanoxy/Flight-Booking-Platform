@@ -58,4 +58,4 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/my-bookings', [BookingController::class,'index'])->name('bookings');
 
-});
+});     

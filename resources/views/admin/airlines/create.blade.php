@@ -1,23 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIRPORT - CREATE</title>
-</head>
-<body>
-    @extends('layout.app')
+@extends('layouts.app')
 
 @section('content')
-<h2>Tambah Maskapai</h2>
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Tambah Maskapai</h5>
+        </div>
 
-<form method="POST" action="{{ route('airlines.store') }}">
-@csrf
-<input name="code" placeholder="Kode"><br>
-<input name="name" placeholder="Nama"><br>
-<button>Simpan</button>
-</form>
+        <div class="card-body">
+            <form method="POST" action="{{ route('airlines.store') }}">
+                @csrf
+
+                <div class="mb-3">
+                    <label class="form-label">Kode Maskapai</label>
+                    <input type="text"
+                           name="code"
+                           class="form-control"
+                           required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Nama Maskapai</label>
+                    <input type="text"
+                           name="name"
+                           class="form-control"
+                           required>
+                </div>
+
+                <button class="btn btn-success">
+                    Simpan
+                </button>
+
+                <a href="{{ route('airlines.index') }}"
+                   class="btn btn-secondary">
+                    Kembali
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
 @endsection
-
-</body>
-</html>

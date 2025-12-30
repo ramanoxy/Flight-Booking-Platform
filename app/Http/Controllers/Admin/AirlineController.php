@@ -23,7 +23,7 @@ class AirlineController extends Controller
     }
 
     public function edit(Airline $airline) {
-        return view('admin.airlines.edit', compact('airlines'));
+        return view('admin.airlines.edit', compact('airline'));
     }
 
     public function update(Request $request, Airline $airline) {
