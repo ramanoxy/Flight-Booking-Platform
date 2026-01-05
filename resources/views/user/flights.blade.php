@@ -9,7 +9,10 @@
             <table class="table table-bordered table-striped align-middle">
                 <thead class="table-dark">
                     <tr>
+                        <th>No</th>
                         <th>Maskapai</th>
+                        <th>Asal</th>
+                        <th>Tujuan</th>
                         <th>Jadwal</th>
                         <th>Harga</th>
                         <th width="120">Aksi</th>
@@ -18,10 +21,12 @@
                 <tbody>
                     @forelse($flights as $f)
                         <tr>
+                            <td>{{ $loop->iteration }}</td>
                             <td>
                                 <strong>{{ $f->airline->name }}</strong>
                             </td>
-
+                            <td>{{ $f->originAirport->name }}</td>
+                            <td>{{ $f->destinationAirport->name }}</td>
                             <td>
                                 {{ \Carbon\Carbon::parse($f->departure_date)->format('d M Y') }}
                                 <br>

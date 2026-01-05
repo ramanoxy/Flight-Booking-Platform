@@ -26,4 +26,11 @@ class FlightController extends Controller
         Flight::create($request->all());
         return redirect()->route('flights.index');
     }
+
+    public function destroy(Flight $flight)
+    {
+        $flight->delete();
+        return redirect()->route('flights.index');
+    }
+
 }
